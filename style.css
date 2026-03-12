@@ -1,0 +1,43 @@
+/* ── Reset & dark background ─────────────────────────────────────── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #000;
+    overflow: hidden;
+    font-family: 'Grilcb', Impact, sans-serif;
+    /* Prevent pull-to-refresh on mobile */
+    overscroll-behavior: none;
+}
+
+/* ── Custom font ─────────────────────────────────────────────────── */
+@font-face {
+    font-family: 'Grilcb';
+    src: url('fonts/29C4F4_0_0.woff') format('woff');
+    font-display: swap;           /* Show fallback font while loading */
+}
+
+/* ── Canvas container — centred on screen ────────────────────────── */
+#canvasHold {
+    position: relative;
+    margin: auto;
+    width: 1024px;
+    height: 768px;
+}
+
+/* ── All canvases stack on top of each other ─────────────────────── */
+#canvasHold canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/*
+ * z-index layering:
+ *   bgcanvas  (0) — static background images (title / game / score)
+ *   canvas    (1) — dynamic foreground (cards, text, highlights)
+ *
+ * The foreground canvas receives all pointer events; the background
+ * is purely decorative and never interactive.
+ */
+#bgcanvas { z-index: 0; }
+#canvas   { z-index: 1; }
