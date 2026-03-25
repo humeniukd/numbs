@@ -26,10 +26,6 @@ import { pointInBox } from '../../utils.js';
 export default class GamePhase {
   /**
    * Draw the game-play screen.
-   *
-   * @param {import('../../framework/GameEngine.js').default} engine
-   * @param {import('../GameState.js').default} state
-   * @param {import('../AchievementSystem.js').default} achievements
    */
   render(engine, state, achievements) {
     const { renderer, canvas, font } = engine;

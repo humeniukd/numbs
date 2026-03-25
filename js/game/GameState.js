@@ -78,7 +78,7 @@ export default class GameState {
   numbers = [];
 
   /** Number of cards for this game (3 or 4). */
-  nrCards = 4;
+  nrCards = 6;
 
   // ─── Selection state ───────────────────────────────────────────────────
   /** Index of the first selected card (`-1` = none). */
